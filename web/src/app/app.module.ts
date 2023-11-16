@@ -1,19 +1,17 @@
-import { NZ_I18N } from 'ng-zorro-antd/i18n';
-import { zh_CN } from 'ng-zorro-antd/i18n';
-import { registerLocaleData } from '@angular/common';
-import zh from '@angular/common/locales/zh';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { NZ_I18N } from 'ng-zorro-antd/i18n';
+import { zh_CN } from 'ng-zorro-antd/i18n';
+import { registerLocaleData } from '@angular/common';
+import zh from '@angular/common/locales/zh';
+import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { IconsProviderModule } from './icons-provider.module';
 import { NzLayoutModule } from 'ng-zorro-antd/layout';
 import { NzMenuModule } from 'ng-zorro-antd/menu';
-import { NzIconModule } from 'ng-zorro-antd/icon';
-import { HttpClientModule } from '@angular/common/http';
-import { IconsProviderModule } from './icons-provider.module';
-import { GoogleMapsModule } from '@angular/google-maps';
-
 
 registerLocaleData(zh);
 
@@ -22,16 +20,18 @@ registerLocaleData(zh);
     AppComponent
   ],
   imports: [
-    BrowserAnimationsModule,
     BrowserModule,
     AppRoutingModule,
-    NzLayoutModule,
-    NzMenuModule,
-    NzIconModule,
+    FormsModule,
     HttpClientModule,
-    GoogleMapsModule
+    BrowserAnimationsModule,
+    IconsProviderModule,
+    NzLayoutModule,
+    NzMenuModule
   ],
-  providers: [IconsProviderModule],
+  providers: [
+    { provide: NZ_I18N, useValue: zh_CN }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
