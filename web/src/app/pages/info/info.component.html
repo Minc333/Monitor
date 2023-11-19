@@ -1,0 +1,34 @@
+<nz-table #basicTable [nzData]="dataSet" [nzScroll]="{ y: '600px' }" [nzPageSize]="20">
+    <thead>
+      <tr>
+        <th>设备编号</th>
+        <th nzWidth="200px">设备坐标</th>
+        <th>电池电压/V</th>
+        <th>阴保电位/V</th>
+        <th>自然电位/V</th>
+        <th>断电电位/V</th>
+        <th>交流干扰电压/V</th>
+        <th>交流杂散电流/mA</th>
+        <th>直流电流/mA</th>
+        <th>阳极开路电位/V</th>
+        <th>阳极输出电流/mA</th>
+        <th>湿度/%</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let data of basicTable.data">
+        <td>{{data.id || '-'}}</td>
+        <td>{{data.jinDu || '-'}},{{data.weiDu || '-'}}</td>
+        <td>{{data.dianChiDianYa || '-'}}</td>
+        <td>{{data.yinBaoDianWei || '-'}}</td>
+        <td>{{data.ziRanDianWei || '-'}}</td>
+        <td>{{data.duanDianDianWei || '-'}}</td>
+        <td>{{data.jiaoLiuGanRaoDianYa || '-'}}</td>
+        <td>{{data.jiaoLiuZaSanDianLiu || '-'}}</td>
+        <td>{{data.zhiLiuDianLiu || '-'}}</td>
+        <td>{{data.yangJiKaiLuDianWei || '-'}}</td>
+        <td>{{data.YangJiShuChuDianLiu || '-'}}</td>
+        <td>{{data.shiDu || '-'}}</td>
+      </tr>
+    </tbody>
+  </nz-table>

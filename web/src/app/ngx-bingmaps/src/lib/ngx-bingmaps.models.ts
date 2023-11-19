@@ -31,3 +31,19 @@ export interface PushpinModel {
   options?: PushpinOptionsModel;
   infobox?: PushpinInfoboxModel;
 }
+
+export interface dataSet {
+  id?: string,
+  jinDu?: number,
+  weiDu?: number,
+  yinBaoDianWei?: string,
+  duanDianDianWei?: string,
+  jiaoLiuZaSanDianLiu?: string,
+  yangJiKaiLuDianWei?: string,
+  shiDu?: string,
+  dianChiDianYa?: string,
+  ziRanDianWei?: string,
+  jiaoLiuGanRaoDianYa?: string,
+  zhiLiuDianLiu?: string,
+  YangJiShuChuDianLiu?: string
+}

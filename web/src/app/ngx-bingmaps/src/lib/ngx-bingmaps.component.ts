@@ -1,8 +1,10 @@
 import {
   Component,
   ElementRef,
+  EventEmitter,
   Input,
   OnChanges,
+  Output,
   SimpleChanges,
   ViewChild,
 } from '@angular/core';
@@ -32,10 +34,11 @@ export class NgxBingmapsComponent implements OnChanges {
   @Input() mapType: keyof typeof MapTypes = 'road';
   @Input() navigationBarMode: keyof typeof NavigationBarModes = 'square';
   @Input() pushpins: PushpinModel[] = [];
+  @Output() pushPinClicked = new EventEmitter();
 
   isMapReady: boolean = false;
 
-  constructor(private bingMap: NgxBingmapsService) {}
+  constructor(private bingMap: NgxBingmapsService) { }
 
   ngOnChanges(changes: SimpleChanges) {
     if (changes) {

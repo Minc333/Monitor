@@ -3,34 +3,25 @@
             nzCollapsible
             nzWidth="256px"
             nzBreakpoint="md"
-            [(nzCollapsed)]="isCollapsed"
-            [nzTrigger]="null">
+            [(nzCollapsed)]="isCollapsed">
     <div class="sidebar-logo">
-      <a href="https://ng.ant.design/" target="_blank">
+      <a routerLink="/gis">
         <img src="https://ng.ant.design/assets/img/logo.svg" alt="logo">
-        <h1>监控系统</h1>
+        <h1>智能阴保云监控系统</h1>
       </a>
     </div>
     <ul nz-menu nzTheme="dark" nzMode="inline" [nzInlineCollapsed]="isCollapsed">
-      <li nz-submenu nzOpen nzTitle="看板" nzIcon="dashboard">
-        <ul>
-          <li nz-menu-item nzMatchRouter>
-            <a routerLink="/welcome">看板 1</a>
-          </li>
-          <li nz-menu-item nzMatchRouter>
-            <a>看板 2</a>
-          </li>
-          <li nz-menu-item nzMatchRouter>
-            <a>看板 3</a>
-          </li>
-        </ul>
+      <li nz-menu-item nzMatchRouter nzIcon="dashboard">
+        <a routerLink="/gis">
+          <span nz-icon nzType="dashboard"></span>
+          <span>GIS监控中心</span>
+        </a>
       </li>
-      <li nz-submenu nzOpen nzTitle="操作" nzIcon="form">
-        <ul>
-          <li nz-menu-item nzMatchRouter>
-            <a>操作 1</a>
-          </li>
-        </ul>
+      <li nz-menu-item nzMatchRouter nzIcon="form">
+        <a routerLink="/info">
+          <span nz-icon nzType="form"></span>
+          <span>数据监测中心</span>
+        </a>
       </li>
     </ul>
   </nz-sider>
@@ -38,10 +29,7 @@
     <nz-header>
       <div class="app-header">
         <span class="header-trigger" (click)="isCollapsed = !isCollapsed">
-            <span class="trigger"
-               nz-icon
-               [nzType]="isCollapsed ? 'menu-unfold' : 'menu-fold'"
-            ></span>
+            <span class="trigger" nz-icon [nzType]="isCollapsed ? 'menu-unfold' : 'menu-fold'"></span>
         </span>
         <span nz-icon nzType="user" nzTheme="outline" class="app-user header-trigger"></span>
       </div>
